@@ -100,10 +100,10 @@ drivers are anonymised `V`/`C` columns, so the direction is clear but not the
 business meaning.
 
 
-![Gains / lift](reports/gains.png)
-![Cost vs threshold](reports/cost_vs_threshold.png)
-![Calibration](reports/calibration.png)
-![SHAP summary](reports/shap_summary.png)
+<img src="reports/gains.png" width="550">
+<img src="reports/cost_vs_threshold.png" width="550">
+<img src="reports/calibration.png" width="450">
+<img src="reports/shap_summary.png" width="650">
 
 ## Limitations
 
