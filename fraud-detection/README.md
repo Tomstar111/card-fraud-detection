@@ -19,7 +19,7 @@ labelled fraud. Features are anonymised (`V*`, `C*`, `card*`, `id_*`) and
 `TransactionDT` is a seconds offset rather than a real timestamp, which is enough
 to order the data in time.
 
-The data is not included in this repo — the competition licence doesn't allow
+The data is not included in this repo - the competition licence doesn't allow
 redistribution. Download `train_transaction.csv` and `train_identity.csv` from
 the [competition page](https://www.kaggle.com/c/ieee-fraud-detection) to run it.
 
@@ -41,8 +41,8 @@ six months even when the average doesn't. A random split would produce nicer but
 misleading numbers.
 
 **Leakage-safe features.** Per-row features (log amount, hour, missing-value
-count) are safe. Anything that learns from the data — frequency and target
-encoding — is fit on train only and mapped onto test. Target encoding is where
+count) are safe. Anything that learns from the data - frequency and target
+encoding - is fit on train only and mapped onto test. Target encoding is where
 this bites: computing card risk over the whole dataset gives a single feature an
 AUC of 0.84 because each row sees its own label. Fit correctly (train only, with
 smoothing) the same feature scores 0.83 on train and 0.75 on test. That
@@ -71,7 +71,7 @@ Scored on the time-based test set (118,108 transactions):
 
 Against a 0.035 base rate, PR-AUC of 0.53 is a ~15× improvement. Worth noting
 that ROC-AUC barely separates the two models (0.78 vs 0.89) while PR-AUC nearly
-quadruples — with 96.5% negatives, ROC-AUC flatters the model, so PR-AUC is the
+quadruples - with 96.5% negatives, ROC-AUC flatters the model, so PR-AUC is the
 metric I trust here. The baseline also only gets the 11 engineered features
 against LightGBM's 410, so part of the gap is data and part is the model.
 
@@ -85,7 +85,7 @@ against LightGBM's 410, so part of the gap is data and part is the model.
 
 **Threshold by cost** (FN = \$150, FP = \$5): the optimum is 0.32, not 0.5. It
 flags 15% of transactions for review, catches 77% of fraud, and costs \$216,500
-on the test window versus \$233,025 at the default 0.5 — the same model, ~$16,500
+on the test window versus \$233,025 at the default 0.5 - the same model, ~$16,500
 saved by moving one number.
 
 **Calibration:** `scale_pos_weight` inflated probabilities (mean predicted 0.15
