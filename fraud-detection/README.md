@@ -101,9 +101,9 @@ business meaning.
 
 
 <img src="reports/gains.png" width="550">
-<img src="reports/cost_vs_threshold.png" width="550">
+<img src="reports/cost_vs_threshold.png" width="450">
 <img src="reports/calibration.png" width="450">
-<img src="reports/shap_summary.png" width="650">
+<img src="reports/shap_summary.png" width="500">
 
 ## Limitations
 
